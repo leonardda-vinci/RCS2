@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leasing | RCS Supermarket</title>
+  <link rel="stylesheet" href="../input.css">
+  <link rel="stylesheet" href="../output.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+  <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+<body class="m-0 font-sans antialiased font-normal bg-gray-50 text-start text-base leading-default text-slate-500">
+  <div class="container sticky top-0 z-sticky w-full max-w-full p-0">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="https://flowbite.com/docs/images/logo.svg" alt="logo" />
+          <span class="self-center text-slate-700 font-semibold whitespace-nowrap dark:text-white">RCS Supermarket</span>
+        </a>
+
+        <div class="flex md:order-2">
+          <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+          <div class="flex items-center gap-6">
+            <ion-icon name="menu" class="w-8 h-8 cursor-pointer fill-state-500 rounded-lg text-3xl cursor-pointer md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1" onclick="onToggleMenu(this)"></ion-icon>
+          </div>
+          <div class="relative hidden md:block">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+              </svg>
+              <span class="sr-only">Search icon</span>
+            </div>
+            <input type="text" id="search-navbar" class="w-full p-2 px-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+          </div>
+        </div>
+
+        <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit p-4 min-h-[20vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 w-full md:rounded-none rounded-none md:shadow-none shadow-xl hidden md:block">
+          <mat-list class="flex flex-col md:p-0 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 w-full max-w-full">
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="malls.html">Malls</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="store.html">Store</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="cinema.html">Cinema</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="happening_now.html">Happening Now</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="about_us.html">About Us</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="contact_us.html">Contact Us</a>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="mt-0 transition-all duration-200 ease-in-out">
+    <section class="min-h-screen mb-10">
+      <div class="relative flex items-center justify-center overflow-hidden bg-center bg-cover min-h-50-screen" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
+        <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-60"></span>
+
+        <div class="container z-10">
+          <div class="flex flex-wrap justify-center -mx-3">
+            <div class="w-full max-w-full px-3 mx-auto mt-0 text-center lg:flex-0 shrink-0 lg:w-5/12">
+              <h1 class="mt-12 mb-2 text-white font-bold text-6xl md:text-8xl lg:text-7xl">Leasing</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto mt-10 md:px-60 relative">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-2">
+          <div>
+            <img src="../assets/img/curved-images/curved14.jpg" class="rounded-lg" alt="">
+          </div>
+          <div class="p-5">
+            <span class="font-bold text-xl">Join our community!</span>
+            <p class="text-slate-500 mt-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              
+              <p class="mt-2">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </p>
+            <div class="md:mt-3 mt-10">
+              <button class="absolute bottom-0 rounded-2xl bg-gradient-to-tl from-blue-600 to-cyan-400 px-10 py-2 font-semibold text-white cursor-pointer shadow-md hover:scale-102 hover:shadow-soft-xs active:opacity-85 bg-transparent">Download Tenant Application Form</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="container mx-auto mt-10 md:px-60 relative">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-2">
+          <div class="p-5">
+            <h1 class="font-bold text-2xl text-blue-400">Inquiries & Applications</h1>
+            <p class="text-md mt-3">Submit the following requiremennts:</p>
+
+            <div class="mt-4">
+              <span class="font-semibold text-lg text-blue-400">With Exisiting Store</span>
+              <mat-list>
+                <mat-list-item class="flex items-center">
+                  <div class="w-2 h-2 rounded-full bg-white border border-black mr-2 ml-3"></div>
+                  Pepper
+                </mat-list-item>
+                <mat-list-item class="flex items-center">
+                  <div class="w-2 h-2 rounded-full bg-white border border-black mr-2 ml-3"></div>
+                  Salt
+                </mat-list-item>
+                <mat-list-item class="flex items-center">
+                  <div class="w-2 h-2 rounded-full bg-white border border-black mr-2 ml-3"></div>
+                  Paprika
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div class="mt-4">
+              <span class="font-semibold text-lg text-blue-400">Without Exisiting Store</span>
+              <mat-list>
+                <mat-list-item class="flex items-center">
+                  <div class="w-2 h-2 rounded-full bg-white border border-black mr-2 ml-3"></div>
+                  Pepper
+                </mat-list-item>
+                <mat-list-item class="flex items-center">
+                  <div class="w-2 h-2 rounded-full bg-white border border-black mr-2 ml-3"></div>
+                  Salt
+                </mat-list-item>
+                <mat-list-item class="flex items-center">
+                  <div class="w-2 h-2 rounded-full bg-white border border-black mr-2 ml-3"></div>
+                  Paprika
+                </mat-list-item>
+              </mat-list>
+            </div>
+
+            <div class="mt-10">
+              <p class="font-semibold">
+                <span class="font-semibold text-blue-400">
+                  Note:
+                </span>
+                Only those who 
+                <span class="uppercase">
+                  submitted all the requirements
+                </span> 
+                will be evaluated and kep in our active file.
+              </p>
+            </div>
+            
+          </div>
+          <div class="p-5">
+            <h1 class="font-bold text-2xl text-blue-400">
+              Inquiries & Applications
+            </h1>
+            <div>
+            <h2 class="my-5 font-semibold text-slate-700 text-lg">RCS Supermarket Leasing Department</h2>
+            <h3 class="my-5 font-semibold text-slate-700 text-md">8/F WalterMart Building 8001-A North EDSA Veteran’s Village, Quezon City, Philippines 1105</h3>
+
+              <p class="text-slate-500 text-sm">Telephone: <span class="font-semibold text-slate-700">(123) 456 – 7890</span></p>
+              <p class="text-slate-500 text-sm">Fax No.: <span class="font-semibold text-slate-700">(123) 456 – 7890</span></p>
+              <p class="text-slate-500 text-sm">Email: <span class="font-semibold text-slate-700">example@example.com.ph</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl p-4">
+      <div class="md:flex md:justify-between">
+        <div class="mb-6 md:mb-0">
+          <a href="index.html" class="flex items-center">
+            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="RCS Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">RCS Supermarket</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+            <mat-list class="text-gray-500 dark:text-gray-400 font-medium flex flex-col">
+              <mat-list-item class="mb-4">
+                <a href="index.html" class="hover:underline">RCS Supermarket</a>
+              </mat-list-item>
+              <mat-list-item>
+                <a href="malls.html" class="hover:underline">Malls</a>
+              </mat-list-item>
+            </mat-list>
+          </div>
+
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+            <mat-list class="text-gray-500 dark:text-gray-400 font-medium flex flex-col">
+              <mat-list-item class="mb-4">
+                <a href="#" class="hover:underline">Facebook</a>
+              </mat-list-item>
+              <mat-list-item>
+                <a href="#" class="hover:underline">Viber</a>
+              </mat-list-item>
+            </mat-list>
+          </div>
+
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+            <mat-list class="text-gray-500 dark:text-gray-400 font-medium flex flex-col">
+              <mat-list-item class="mb-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+              </mat-list-item>
+              <mat-list-item>
+                <a href="#" class="hover:underline">Terms &amp; Condition</a>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 h-1 bg-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          © 2023
+          <a href="#" class="hover:underline">RCS Eastern Intertrade Corp</a>. All Rights Reserved.
+        </span>
+
+        <div class="flex mt-4 sm:justify-center sm:mt-0 gap-4">
+          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+              <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+            </svg>
+            <span class="sr-only">Facebook page</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="w-4 h-4" viewBox="0 0 256 256" xml:space="preserve">
+
+              <defs>
+              </defs>
+              <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <path d="M 78.042 8.778 c -2.237 -2.064 -11.275 -8.625 -31.406 -8.714 c 0 0 -23.74 -1.432 -35.313 9.184 C 4.881 15.692 2.615 25.12 2.376 36.809 C 2.137 48.499 1.827 70.405 22.943 76.344 h 0.02 l -0.013 9.064 c 0 0 -0.135 3.669 2.281 4.418 c 2.923 0.908 4.638 -1.881 7.428 -4.888 c 1.531 -1.65 3.646 -4.075 5.24 -5.928 c 14.442 1.215 25.549 -1.563 26.81 -1.973 c 2.916 -0.945 19.416 -3.06 22.099 -24.964 C 89.579 29.496 85.469 15.215 78.042 8.778 z M 65.906 57.835 c 0 0.009 -0.007 0.026 -0.007 0.034 c -0.93 1.612 -2.11 3.065 -3.497 4.306 c -0.016 0.008 -0.016 0.016 -0.031 0.024 c -1.205 1.007 -2.388 1.579 -3.551 1.717 c -0.171 0.03 -0.345 0.041 -0.519 0.032 c -0.513 0.005 -1.023 -0.073 -1.51 -0.232 l -0.038 -0.055 c -1.791 -0.505 -4.781 -1.769 -9.761 -4.516 c -2.882 -1.571 -5.625 -3.383 -8.201 -5.417 c -1.291 -1.019 -2.522 -2.111 -3.688 -3.271 l -0.124 -0.124 l -0.124 -0.124 l -0.124 -0.124 c -0.042 -0.04 -0.082 -0.082 -0.124 -0.124 c -1.16 -1.166 -2.252 -2.397 -3.271 -3.688 c -2.034 -2.575 -3.846 -5.318 -5.417 -8.199 c -2.747 -4.981 -4.011 -7.968 -4.516 -9.762 l -0.055 -0.038 c -0.158 -0.487 -0.236 -0.997 -0.231 -1.51 c -0.009 -0.173 0.001 -0.347 0.031 -0.519 c 0.145 -1.161 0.718 -2.345 1.719 -3.553 c 0.008 -0.015 0.016 -0.015 0.024 -0.031 c 1.24 -1.387 2.694 -2.567 4.306 -3.495 c 0.008 0 0.024 -0.008 0.034 -0.008 c 1.621 -0.844 3.158 -0.558 4.203 0.675 c 0.008 0.008 2.176 2.611 3.106 3.882 c 0.958 1.348 1.848 2.742 2.666 4.179 c 1.067 1.914 0.398 3.873 -0.65 4.681 l -2.114 1.68 c -1.067 0.862 -0.926 2.462 -0.926 2.462 s 3.131 11.849 14.828 14.835 c 0 0 1.6 0.135 2.462 -0.927 l 1.68 -2.114 c 0.81 -1.048 2.766 -1.717 4.681 -0.65 c 1.435 0.818 2.828 1.708 4.175 2.666 c 1.271 0.935 3.873 3.106 3.881 3.106 C 66.464 54.677 66.75 56.214 65.906 57.835 z M 46.309 24.289 c -0.627 -0.046 -1.098 -0.592 -1.052 -1.219 c 0.046 -0.627 0.594 -1.099 1.219 -1.052 c 4.845 0.355 8.692 2.052 11.433 5.043 c 2.747 3.002 4.091 6.777 3.995 11.22 c -0.013 0.62 -0.52 1.114 -1.138 1.114 c -0.008 0 -0.017 0 -0.025 0 c -0.629 -0.014 -1.127 -0.534 -1.114 -1.163 c 0.084 -3.891 -1.027 -7.042 -3.398 -9.633 C 53.86 26.015 50.615 24.604 46.309 24.289 z M 56.061 36.242 c 0.031 0.628 -0.453 1.162 -1.081 1.193 c -0.019 0.001 -0.038 0.001 -0.057 0.001 c -0.603 0 -1.106 -0.473 -1.136 -1.082 c -0.192 -3.869 -2.011 -5.761 -5.726 -5.955 c -0.628 -0.033 -1.11 -0.568 -1.078 -1.196 c 0.033 -0.628 0.566 -1.112 1.196 -1.078 C 53.084 28.383 55.81 31.189 56.061 36.242 z M 66.754 41.735 c -0.003 0 -0.006 0 -0.009 0 c -0.625 0 -1.134 -0.504 -1.138 -1.13 c -0.052 -6.869 -2.114 -12.336 -6.127 -16.248 c -4.021 -3.92 -9.102 -5.929 -15.103 -5.97 c -0.629 -0.004 -1.135 -0.518 -1.131 -1.146 c 0.004 -0.626 0.513 -1.131 1.138 -1.131 c 0.003 0 0.005 0 0.008 0 c 6.609 0.046 12.22 2.272 16.676 6.617 c 4.465 4.352 6.757 10.362 6.814 17.861 C 67.888 41.216 67.382 41.73 66.754 41.735 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114, 113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              </g>
+              </svg>
+            <span class="sr-only">Viber icon</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="w-4 h-4" viewBox="0 0 256 256" xml:space="preserve">
+
+              <defs>
+              </defs>
+              <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <path d="M 45 31.77 c -7.444 0 -13.5 6.056 -13.5 13.5 s 6.056 13.5 13.5 13.5 s 13.5 -6.056 13.5 -13.5 S 52.444 31.77 45 31.77 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114,113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                <path d="M 63.718 0 H 26.282 C 11.767 0 0 11.767 0 26.282 v 37.437 C 0 78.233 11.767 90 26.282 90 h 37.437 C 78.233 90 90 78.233 90 63.718 V 26.282 C 90 11.767 78.233 0 63.718 0 z M 45 68.679 c -12.908 0 -23.409 -10.501 -23.409 -23.408 c 0 -12.908 10.501 -23.409 23.409 -23.409 c 12.907 0 23.408 10.501 23.408 23.409 C 68.408 58.178 57.907 68.679 45 68.679 z M 68.922 21.922 c -2.761 0 -5 -2.239 -5 -5 s 2.239 -5 5 -5 s 5 2.239 5 5 S 71.683 21.922 68.922 21.922 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114, 113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              </g>
+              </svg>
+              <span class="sr-only">Instagram icon</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="w-4 h-4" viewBox="0 0 256 256" xml:space="preserve">
+
+            <defs>
+            </defs>
+            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+              <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 L 84.494 22.535 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114, 113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            </g>
+            </svg>
+            <span class="sr-only">Tiktok icon</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navLinks = document.querySelector('.nav-links')
+    function onToggleMenu(){
+        navLinks.classList.toggle('top-[9%]')
+    }
+  </script>
+</body>
+</html>

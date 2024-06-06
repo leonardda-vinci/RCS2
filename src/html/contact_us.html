@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../input.css">
+  <link rel="stylesheet" href="../output.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+  <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  
+</head>
+<body class="m-0 font-sans antialiased font-normal bg-gray-50 text-start text-base leading-default text-slate-500">
+  <div class="container sticky top-0 z-sticky w-full max-w-full p-0">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="https://flowbite.com/docs/images/logo.svg" alt="">
+          <span class="self-center text-slate-700 font-semibold whitespace-nowrap dark:text-white">RCS Supermarket</span>
+        </a>
+
+        <div class="flex md:order-2">
+          <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+          <div class="flex items-center gap-6">
+            <ion-icon name="menu" class="w-8 h-8 cursor-pointer fill-state-500 rounded-lg text-3xl cursor-pointer md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1" onclick="onToggleMenu(this)"></ion-icon>
+          </div>
+          <div class="relative hidden md:block">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+              </svg>
+              <span class="sr-only">Search icon</span>
+            </div>
+            <input type="text" id="search-navbar" class="w-full p-2 px-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+          </div>
+        </div>
+
+        <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit p-4 min-h-[20vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 w-full md:rounded-none rounded-none md:shadow-none shadow-xl hidden md:block">
+          <mat-list class="flex flex-col md:p-0 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 w-full max-w-full">
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="malls.html">Malls</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="store.html">Store</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="cinema.html">Cinema</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="happening_now.html">Happening Now</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer">
+              <a href="about_us.html">About Us</a>
+            </mat-list-item>
+            <mat-list-item class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 cursor-pointer">
+              <a href="contact_us.html">Contact Us</a>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="mt-0 transition-all duration-200 ease-in-out">
+    <section class="min-h-screen mb-10">
+      <div class="relative flex items-center justify-center pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl" style="background-image: url('../assets/img/curved-images/curved14.jpg')">
+        <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-60"></span>
+        
+        <div class="container z-10">
+            <div class="flex flex-wrap justify-center -mx-3">
+                <div class="w-full max-w-full px-3 mx-auto mt-0 text-center lg:flex-0 shrink-0 lg:w-5/12">
+                    <h1 class="mt-12 mb-2 text-white font-bold text-6xl md:text-8xl lg:text-7xl">Contact Us</h1>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+
+      <div class="container mt-5 md:px-60 pt-5 grid md:grid-cols-3 grid-cols-1 gap-1">
+        <div class="p-8">
+          <span class="font-semibold text-lg">RCS Eastern Intertrade Corp., TLZ Building, San Juan (Matadero, Santa Rosa - Tarlac Rd, Tarlac City, 2300 Tarlac)</span>
+          
+          <span class="flex items-center gap-2 font-semibold my-5">Email: <p class="text-red-600 font-semibold ">example@example.com</p></span>
+
+
+          <div class="w-full h-auto flex items-center mb-5 gap-2 flex-wrap">
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
+              <svg class="transition-all duration-300 group-hover:scale-110"
+              xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
+                <path d="M46.4927 38.6403L47.7973 30.3588H39.7611V24.9759C39.7611 22.7114 40.883 20.4987 44.4706 20.4987H48.1756V13.4465C46.018 13.1028 43.8378 12.9168 41.6527 12.8901C35.0385 12.8901 30.7204 16.8626 30.7204 24.0442V30.3588H23.3887V38.6403H30.7204V58.671H39.7611V38.6403H46.4927Z" fill="#337FFF"/>
+              </svg>
+            </button>
+
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
+              <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
+                <path d="M25.4663 54.2563C25.4663 53.4894 25.4663 52.7226 25.4663 51.9558C25.4717 51.9244 25.4706 51.8923 25.463 51.8614C25.4554 51.8305 25.4415 51.8015 25.4221 51.7761C25.4027 51.7507 25.3783 51.7296 25.3503 51.7139C25.3223 51.6983 25.2914 51.6885 25.2595 51.6852C23.3396 51.1452 21.5676 50.1833 20.0755 48.8711C18.9883 47.8921 18.0831 46.7318 17.4011 45.443C16.4398 43.5813 15.8001 41.5734 15.5084 39.5027C15.147 36.9051 15.0214 34.2807 15.1333 31.6609C15.1579 30.4395 15.2209 29.232 15.3611 28.0107C15.5847 25.6897 16.1762 23.4181 17.1137 21.2792C18.2713 18.6495 20.3715 16.5371 23.0092 15.3493C24.806 14.5354 26.6963 13.9411 28.6384 13.5797C30.5428 13.2226 32.471 13.0035 34.4077 12.924C36.1534 12.8628 37.9011 12.8883 39.6443 13.0003C42.1391 13.1045 44.6114 13.5136 47.0049 14.2182C48.7795 14.7246 50.4677 15.4906 52.0137 16.4909C53.5199 17.5145 54.7382 18.9009 55.5538 20.5194C56.5126 22.4097 57.1644 24.4378 57.4851 26.5291C57.6934 27.7706 57.8304 29.023 57.8952 30.2799C57.9863 31.8379 57.9758 33.4027 57.9162 34.9537C57.8566 36.5047 57.7234 38.0106 57.5307 39.5304C57.287 41.8115 56.5787 44.0199 55.4486 46.0224C53.9777 48.5556 51.6214 50.4686 48.8241 51.4006C46.9113 52.0637 44.9363 52.5357 42.9285 52.8094C41.4599 53.0106 39.9878 53.1563 38.5086 53.2153C37.3765 53.2674 36.2444 53.2535 35.1122 53.2362C34.4708 53.2362 33.8329 53.1737 33.1949 53.1182C33.1323 53.1065 33.0676 53.1134 33.009 53.1381C32.9503 53.1628 32.9004 53.2042 32.8655 53.257C31.5756 54.7906 30.2367 56.2826 28.8872 57.7677C28.6414 58.0387 28.3568 58.2725 28.0425 58.4617C27.8362 58.5957 27.6009 58.6798 27.3557 58.7072C27.1105 58.7346 26.8622 58.7045 26.6309 58.6194C26.3996 58.5343 26.1918 58.3965 26.0242 58.2172C25.8566 58.0379 25.7339 57.8222 25.6661 57.5873C25.5325 57.1699 25.4662 56.7343 25.4698 56.2965C25.4663 55.6095 25.4663 54.9329 25.4663 54.2563ZM27.026 57.1674L27.1908 57.0148L30.1175 53.7983C31.2438 52.5607 32.3689 51.322 33.4929 50.0821C33.5481 50.0065 33.6227 49.9467 33.7089 49.9089C33.7951 49.8711 33.8899 49.8566 33.9836 49.867C34.3656 49.9051 34.7477 49.919 35.1332 49.9225C36.4652 49.9225 37.7971 49.9225 39.129 49.8288C40.3383 49.7351 41.544 49.5894 42.7428 49.402C44.0334 49.1796 45.3111 48.8889 46.5703 48.5311C49.3744 47.7851 51.544 46.189 52.9075 43.604C53.7124 42.0147 54.2173 40.2931 54.3971 38.5242C54.6102 36.8569 54.7377 35.18 54.7792 33.4999C54.8413 31.3894 54.6957 29.2779 54.3445 27.1953C54.101 25.6864 53.6628 24.2147 53.0407 22.8164C52.2485 21.0815 51.1269 19.645 49.3989 18.722C46.7491 17.3063 43.8819 16.6748 40.9271 16.3521C40.0894 16.2619 39.2517 16.2133 38.4105 16.1821C36.688 16.0942 34.9619 16.1035 33.2405 16.2099C32.0025 16.3008 30.7712 16.4653 29.5532 16.7026C27.7619 17.0258 26.0291 17.6105 24.4112 18.4375C23.4733 18.9066 22.6224 19.5296 21.8946 20.2799C20.715 21.5851 19.8498 23.138 19.3639 24.8219C18.7876 26.7831 18.473 28.8105 18.4281 30.8524C18.3153 32.8944 18.3411 34.9416 18.5052 36.9801C18.6073 38.1933 18.8125 39.3958 19.1186 40.5748C19.574 42.4122 20.4575 44.1186 21.6983 45.5575C23.038 47.0254 24.7694 48.0887 26.693 48.6248C26.9349 48.6976 27.0435 48.7809 27.0435 49.0516C27.0225 50.0509 27.0435 51.0502 27.0435 52.0495L27.026 57.1674Z" fill="#754A91"/>
+                <path d="M24.5732 26.1755C24.5487 25.4156 24.9658 24.8639 25.4705 24.3677C26.1362 23.7365 26.8696 23.1792 27.6577 22.7057C28.017 22.4863 28.4443 22.4027 28.861 22.4703C29.2776 22.5379 29.6556 22.7521 29.9254 23.0735C30.8789 24.0657 31.7324 25.1476 32.4736 26.3039C32.8407 26.824 33.1179 27.4009 33.2938 28.011C33.3641 28.2491 33.3687 28.5015 33.3071 28.742C33.2454 28.9824 33.1198 29.2021 32.9433 29.3781C32.539 29.7711 32.108 30.1363 31.6534 30.4711C31.4244 30.6518 31.2541 30.8952 31.1637 31.171C31.0734 31.4468 31.0669 31.7428 31.1452 32.0221C31.4259 33.334 32.062 34.5455 32.9854 35.5266C34.1073 36.8825 35.5529 37.9403 37.1915 38.6044C37.5941 38.8093 38.0554 38.8717 38.4988 38.7813C38.7417 38.7157 38.9575 38.5761 39.1157 38.3823C39.3611 38.0735 39.6275 37.7751 39.8483 37.4454C40.1347 37.0343 40.572 36.7501 41.067 36.6535C41.562 36.5569 42.0756 36.6556 42.4981 36.9284C43.6863 37.6109 44.808 38.4007 45.849 39.2879C46.0943 39.4961 46.3502 39.6973 46.5956 39.909C46.8859 40.1282 47.0955 40.4356 47.1924 40.7841C47.2893 41.1325 47.268 41.5029 47.1318 41.8382C46.9153 42.4022 46.5996 42.9237 46.1995 43.3788C45.7022 44.063 45.0688 44.6392 44.3383 45.0721C43.9891 45.2751 43.5967 45.3943 43.1925 45.4202C42.7884 45.4461 42.3837 45.378 42.0109 45.2213C39.1751 44.091 36.5253 42.5485 34.1491 40.6446C31.8248 38.7505 29.7937 36.5294 28.1203 34.052C26.7123 32.0011 25.5921 29.7705 24.7905 27.4212C24.7052 27.137 24.635 26.8486 24.5802 26.5572C24.5646 26.4305 24.5623 26.3026 24.5732 26.1755Z" fill="#754A91"/>
+                <path d="M36.6744 22.4835C39.0471 22.527 41.3291 23.3933 43.1226 24.9317C44.9161 26.47 46.1073 28.5826 46.4886 30.9013C46.6421 31.7443 46.7242 32.5985 46.734 33.4551C46.734 33.6563 46.6814 33.802 46.4641 33.8229C46.2468 33.8437 46.1907 33.6598 46.1907 33.4759C46.2233 31.7433 45.864 30.0255 45.1392 28.4481C44.5288 27.152 43.6246 26.0128 42.4969 25.1191C41.3692 24.2255 40.0484 23.6014 38.6373 23.2955C37.8912 23.1245 37.1283 23.036 36.3625 23.0318C36.2879 23.033 36.2135 23.0237 36.1417 23.004C36.0805 22.9869 36.0284 22.947 35.9963 22.8926C35.9643 22.8382 35.9548 22.7737 35.9699 22.7125C35.9704 22.6835 35.9766 22.6549 35.9884 22.6283C36.0001 22.6017 36.0171 22.5777 36.0383 22.5577C36.0595 22.5377 36.0845 22.5221 36.1119 22.5117C36.1393 22.5013 36.1685 22.4965 36.1977 22.4974C36.3555 22.4766 36.5167 22.4835 36.6744 22.4835Z" fill="#754A91"/>
+                <path d="M43.4406 31.8935C43.4288 30.9296 43.189 29.9818 42.7404 29.1261C42.2918 28.2705 41.6469 27.5308 40.8574 26.9664C39.9359 26.3257 38.8647 25.928 37.7449 25.811C37.5556 25.7867 37.3663 25.7763 37.1735 25.7555C36.9807 25.7346 36.8651 25.6548 36.8826 25.4605C36.9001 25.2662 37.0228 25.1968 37.2331 25.2107C40.3386 25.3981 42.9814 27.1364 43.7946 30.3738C43.9433 30.998 44.0175 31.6373 44.0154 32.2787C44.0154 32.3377 44.0154 32.3967 44.0154 32.4522C44.0154 32.6257 43.9033 32.7402 43.7315 32.7367C43.6934 32.7354 43.656 32.7265 43.6215 32.7104C43.587 32.6944 43.5562 32.6715 43.531 32.6432C43.5057 32.615 43.4865 32.5819 43.4746 32.5461C43.4627 32.5103 43.4583 32.4724 43.4616 32.4348C43.4336 32.2717 43.4406 32.1052 43.4406 31.8935Z" fill="#754A91"/>
+                <path d="M37.9996 28.028C39.7031 28.1425 40.8913 28.9683 41.2173 30.7622C41.2568 30.992 41.2849 31.2236 41.3014 31.4562C41.3014 31.6436 41.2593 31.8032 41.0525 31.8032C40.8457 31.8032 40.7756 31.6644 40.7686 31.4562C40.7667 30.7686 40.5527 30.0979 40.1552 29.5339C39.7376 29.0231 39.1379 28.6903 38.4798 28.604C38.3327 28.5768 38.184 28.5582 38.0347 28.5485C37.7893 28.5485 37.6526 28.4271 37.6842 28.2397C37.7157 28.0523 37.8629 28.0176 37.9996 28.028Z" fill="#754A91"/>
+                </svg>
+            </button>
+              
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
+              <svg class="transition-all duration-300 group-hover:scale-110" width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M45.6721 29.4285C48.7387 31.6085 52.4112 32.7733 56.1737 32.7592V25.3024C55.434 25.3045 54.6963 25.2253 53.9739 25.0663V31.0068C50.203 31.0135 46.5252 29.8354 43.4599 27.6389V42.9749C43.4507 45.4914 42.7606 47.9585 41.4628 50.1146C40.165 52.2706 38.3079 54.0353 36.0885 55.2215C33.8691 56.4076 31.37 56.9711 28.8563 56.852C26.3426 56.733 23.9079 55.9359 21.8105 54.5453C23.7506 56.5082 26.2295 57.8513 28.9333 58.4044C31.6372 58.9576 34.4444 58.6959 36.9994 57.6526C39.5545 56.6093 41.7425 54.8312 43.2864 52.5436C44.8302 50.256 45.6605 47.5616 45.6721 44.8018V29.4285ZM48.3938 21.8226C46.8343 20.1323 45.8775 17.9739 45.6721 15.6832V14.7139H43.5842C43.8423 16.1699 44.4039 17.5553 45.2326 18.78C46.0612 20.0048 47.1383 21.0414 48.3938 21.8226ZM26.645 48.642C25.9213 47.6957 25.4779 46.5653 25.365 45.3793C25.2522 44.1934 25.4746 42.9996 26.0068 41.9338C26.5391 40.8681 27.3598 39.9731 28.3757 39.3508C29.3915 38.7285 30.5616 38.4039 31.7529 38.4139C32.4106 38.4137 33.0644 38.5143 33.6916 38.7121V31.0068C32.9584 30.9097 32.2189 30.8682 31.4794 30.8826V36.8728C29.9522 36.39 28.2992 36.4998 26.8492 37.1803C25.3992 37.8608 24.2585 39.0621 23.6539 40.5454C23.0494 42.0286 23.0252 43.6851 23.5864 45.1853C24.1475 46.6855 25.2527 47.9196 26.6823 48.642H26.645Z" fill="#EE1D52"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M43.4589 27.5892C46.5241 29.7857 50.2019 30.9638 53.9729 30.9571V25.0166C51.8243 24.5623 49.8726 23.4452 48.3927 21.8226C47.1372 21.0414 46.0601 20.0048 45.2315 18.78C44.4029 17.5553 43.8412 16.1699 43.5831 14.7139H38.09V44.8018C38.0849 46.1336 37.6629 47.4304 36.8831 48.51C36.1034 49.5897 35.0051 50.3981 33.7425 50.8217C32.4798 51.2453 31.1162 51.2629 29.8431 50.872C28.57 50.4811 27.4512 49.7012 26.6439 48.642C25.3645 47.9965 24.3399 46.9387 23.7354 45.6394C23.1309 44.3401 22.9818 42.875 23.3121 41.4805C23.6424 40.0861 24.4329 38.8435 25.556 37.9535C26.6791 37.0634 28.0693 36.5776 29.5023 36.5745C30.1599 36.5766 30.8134 36.6772 31.4411 36.8728V30.8826C28.7288 30.9477 26.0946 31.8033 23.8617 33.3444C21.6289 34.8855 19.8946 37.0451 18.8717 39.5579C17.8489 42.0708 17.5821 44.8276 18.1039 47.49C18.6258 50.1524 19.9137 52.6045 21.8095 54.5453C23.9073 55.9459 26.3458 56.7512 28.8651 56.8755C31.3845 56.9997 33.8904 56.4383 36.1158 55.2509C38.3413 54.0636 40.2031 52.2948 41.5027 50.133C42.8024 47.9712 43.4913 45.4973 43.4962 42.9749L43.4589 27.5892Z" fill="black"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M53.9736 25.0161V23.4129C52.0005 23.4213 50.0655 22.8696 48.3934 21.8221C49.8695 23.4493 51.8229 24.5674 53.9736 25.0161ZM43.5838 14.7134C43.5838 14.4275 43.4968 14.1292 43.4596 13.8434V12.874H35.8785V42.9744C35.872 44.6598 35.197 46.2738 34.0017 47.4621C32.8064 48.6504 31.1885 49.3159 29.503 49.3126C28.5106 49.3176 27.5311 49.0876 26.6446 48.6415C27.4519 49.7007 28.5707 50.4805 29.8438 50.8715C31.1169 51.2624 32.4805 51.2448 33.7432 50.8212C35.0058 50.3976 36.1041 49.5892 36.8838 48.5095C37.6636 47.4298 38.0856 46.1331 38.0907 44.8013V14.7134H43.5838ZM31.4418 30.8696V29.167C28.3222 28.7432 25.1511 29.3885 22.4453 30.9977C19.7394 32.6069 17.6584 35.0851 16.5413 38.0284C15.4242 40.9718 15.337 44.2067 16.2938 47.206C17.2506 50.2053 19.195 52.792 21.8102 54.5448C19.9287 52.5995 18.6545 50.1484 18.1433 47.4908C17.6321 44.8333 17.906 42.0844 18.9315 39.5799C19.957 37.0755 21.6897 34.924 23.918 33.3882C26.1463 31.8524 28.7736 30.9988 31.4791 30.9318L31.4418 30.8696Z" fill="#69C9D0"/>
+                </svg>
+            </button>
+
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
+              <svg class="transition-all duration-300 group-hover:scale-110" width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.4456 35.7808C27.4456 31.1786 31.1776 27.4468 35.7826 27.4468C40.3875 27.4468 44.1216 31.1786 44.1216 35.7808C44.1216 40.383 40.3875 44.1148 35.7826 44.1148C31.1776 44.1148 27.4456 40.383 27.4456 35.7808ZM22.9377 35.7808C22.9377 42.8708 28.6883 48.618 35.7826 48.618C42.8768 48.618 48.6275 42.8708 48.6275 35.7808C48.6275 28.6908 42.8768 22.9436 35.7826 22.9436C28.6883 22.9436 22.9377 28.6908 22.9377 35.7808ZM46.1342 22.4346C46.1339 23.0279 46.3098 23.608 46.6394 24.1015C46.9691 24.595 47.4377 24.9797 47.9861 25.2069C48.5346 25.4342 49.1381 25.4939 49.7204 25.3784C50.3028 25.2628 50.8378 24.9773 51.2577 24.5579C51.6777 24.1385 51.9638 23.6041 52.0799 23.0222C52.1959 22.4403 52.1367 21.8371 51.9097 21.2888C51.6828 20.7406 51.2982 20.2719 50.8047 19.942C50.3112 19.6122 49.7309 19.436 49.1372 19.4358H49.136C48.3402 19.4361 47.5771 19.7522 47.0142 20.3144C46.4514 20.8767 46.1349 21.6392 46.1342 22.4346ZM25.6765 56.1302C23.2377 56.0192 21.9121 55.6132 21.0311 55.2702C19.8632 54.8158 19.0299 54.2746 18.1538 53.4002C17.2777 52.5258 16.7354 51.6938 16.2827 50.5266C15.9393 49.6466 15.533 48.3214 15.4222 45.884C15.3009 43.2488 15.2767 42.4572 15.2767 35.781C15.2767 29.1048 15.3029 28.3154 15.4222 25.678C15.5332 23.2406 15.9425 21.918 16.2827 21.0354C16.7374 19.8682 17.2789 19.0354 18.1538 18.1598C19.0287 17.2842 19.8612 16.7422 21.0311 16.2898C21.9117 15.9466 23.2377 15.5406 25.6765 15.4298C28.3133 15.3086 29.1054 15.2844 35.7826 15.2844C42.4598 15.2844 43.2527 15.3106 45.8916 15.4298C48.3305 15.5408 49.6539 15.9498 50.537 16.2898C51.7049 16.7422 52.5382 17.2854 53.4144 18.1598C54.2905 19.0342 54.8308 19.8682 55.2855 21.0354C55.6289 21.9154 56.0351 23.2406 56.146 25.678C56.2673 28.3154 56.2915 29.1048 56.2915 35.781C56.2915 42.4572 56.2673 43.2466 56.146 45.884C56.0349 48.3214 55.6267 49.6462 55.2855 50.5266C54.8308 51.6938 54.2893 52.5266 53.4144 53.4002C52.5394 54.2738 51.7049 54.8158 50.537 55.2702C49.6565 55.6134 48.3305 56.0194 45.8916 56.1302C43.2549 56.2514 42.4628 56.2756 35.7826 56.2756C29.1024 56.2756 28.3125 56.2514 25.6765 56.1302ZM25.4694 10.9322C22.8064 11.0534 20.9867 11.4754 19.3976 12.0934C17.7518 12.7316 16.3585 13.5878 14.9663 14.977C13.5741 16.3662 12.7195 17.7608 12.081 19.4056C11.4626 20.9948 11.0403 22.8124 10.9191 25.4738C10.7958 28.1394 10.7676 28.9916 10.7676 35.7808C10.7676 42.57 10.7958 43.4222 10.9191 46.0878C11.0403 48.7494 11.4626 50.5668 12.081 52.156C12.7195 53.7998 13.5743 55.196 14.9663 56.5846C16.3583 57.9732 17.7518 58.8282 19.3976 59.4682C20.9897 60.0862 22.8064 60.5082 25.4694 60.6294C28.138 60.7506 28.9893 60.7808 35.7826 60.7808C42.5759 60.7808 43.4286 60.7526 46.0958 60.6294C48.759 60.5082 50.5774 60.0862 52.1676 59.4682C53.8124 58.8282 55.2066 57.9738 56.5989 56.5846C57.9911 55.1954 58.8438 53.7998 59.4842 52.156C60.1026 50.5668 60.5268 48.7492 60.6461 46.0878C60.7674 43.4202 60.7956 42.57 60.7956 35.7808C60.7956 28.9916 60.7674 28.1394 60.6461 25.4738C60.5248 22.8122 60.1026 20.9938 59.4842 19.4056C58.8438 17.7618 57.9889 16.3684 56.5989 14.977C55.2088 13.5856 53.8124 12.7316 52.1696 12.0934C50.5775 11.4754 48.7588 11.0514 46.0978 10.9322C43.4306 10.811 42.5779 10.7808 35.7846 10.7808C28.9913 10.7808 28.138 10.809 25.4694 10.9322Z" fill="url(#paint0_radial_7092_54471)"/>
+                <path d="M27.4456 35.7808C27.4456 31.1786 31.1776 27.4468 35.7826 27.4468C40.3875 27.4468 44.1216 31.1786 44.1216 35.7808C44.1216 40.383 40.3875 44.1148 35.7826 44.1148C31.1776 44.1148 27.4456 40.383 27.4456 35.7808ZM22.9377 35.7808C22.9377 42.8708 28.6883 48.618 35.7826 48.618C42.8768 48.618 48.6275 42.8708 48.6275 35.7808C48.6275 28.6908 42.8768 22.9436 35.7826 22.9436C28.6883 22.9436 22.9377 28.6908 22.9377 35.7808ZM46.1342 22.4346C46.1339 23.0279 46.3098 23.608 46.6394 24.1015C46.9691 24.595 47.4377 24.9797 47.9861 25.2069C48.5346 25.4342 49.1381 25.4939 49.7204 25.3784C50.3028 25.2628 50.8378 24.9773 51.2577 24.5579C51.6777 24.1385 51.9638 23.6041 52.0799 23.0222C52.1959 22.4403 52.1367 21.8371 51.9097 21.2888C51.6828 20.7406 51.2982 20.2719 50.8047 19.942C50.3112 19.6122 49.7309 19.436 49.1372 19.4358H49.136C48.3402 19.4361 47.5771 19.7522 47.0142 20.3144C46.4514 20.8767 46.1349 21.6392 46.1342 22.4346ZM25.6765 56.1302C23.2377 56.0192 21.9121 55.6132 21.0311 55.2702C19.8632 54.8158 19.0299 54.2746 18.1538 53.4002C17.2777 52.5258 16.7354 51.6938 16.2827 50.5266C15.9393 49.6466 15.533 48.3214 15.4222 45.884C15.3009 43.2488 15.2767 42.4572 15.2767 35.781C15.2767 29.1048 15.3029 28.3154 15.4222 25.678C15.5332 23.2406 15.9425 21.918 16.2827 21.0354C16.7374 19.8682 17.2789 19.0354 18.1538 18.1598C19.0287 17.2842 19.8612 16.7422 21.0311 16.2898C21.9117 15.9466 23.2377 15.5406 25.6765 15.4298C28.3133 15.3086 29.1054 15.2844 35.7826 15.2844C42.4598 15.2844 43.2527 15.3106 45.8916 15.4298C48.3305 15.5408 49.6539 15.9498 50.537 16.2898C51.7049 16.7422 52.5382 17.2854 53.4144 18.1598C54.2905 19.0342 54.8308 19.8682 55.2855 21.0354C55.6289 21.9154 56.0351 23.2406 56.146 25.678C56.2673 28.3154 56.2915 29.1048 56.2915 35.781C56.2915 42.4572 56.2673 43.2466 56.146 45.884C56.0349 48.3214 55.6267 49.6462 55.2855 50.5266C54.8308 51.6938 54.2893 52.5266 53.4144 53.4002C52.5394 54.2738 51.7049 54.8158 50.537 55.2702C49.6565 55.6134 48.3305 56.0194 45.8916 56.1302C43.2549 56.2514 42.4628 56.2756 35.7826 56.2756C29.1024 56.2756 28.3125 56.2514 25.6765 56.1302ZM25.4694 10.9322C22.8064 11.0534 20.9867 11.4754 19.3976 12.0934C17.7518 12.7316 16.3585 13.5878 14.9663 14.977C13.5741 16.3662 12.7195 17.7608 12.081 19.4056C11.4626 20.9948 11.0403 22.8124 10.9191 25.4738C10.7958 28.1394 10.7676 28.9916 10.7676 35.7808C10.7676 42.57 10.7958 43.4222 10.9191 46.0878C11.0403 48.7494 11.4626 50.5668 12.081 52.156C12.7195 53.7998 13.5743 55.196 14.9663 56.5846C16.3583 57.9732 17.7518 58.8282 19.3976 59.4682C20.9897 60.0862 22.8064 60.5082 25.4694 60.6294C28.138 60.7506 28.9893 60.7808 35.7826 60.7808C42.5759 60.7808 43.4286 60.7526 46.0958 60.6294C48.759 60.5082 50.5774 60.0862 52.1676 59.4682C53.8124 58.8282 55.2066 57.9738 56.5989 56.5846C57.9911 55.1954 58.8438 53.7998 59.4842 52.156C60.1026 50.5668 60.5268 48.7492 60.6461 46.0878C60.7674 43.4202 60.7956 42.57 60.7956 35.7808C60.7956 28.9916 60.7674 28.1394 60.6461 25.4738C60.5248 22.8122 60.1026 20.9938 59.4842 19.4056C58.8438 17.7618 57.9889 16.3684 56.5989 14.977C55.2088 13.5856 53.8124 12.7316 52.1696 12.0934C50.5775 11.4754 48.7588 11.0514 46.0978 10.9322C43.4306 10.811 42.5779 10.7808 35.7846 10.7808C28.9913 10.7808 28.138 10.809 25.4694 10.9322Z" fill="url(#paint1_radial_7092_54471)"/>
+                <defs>
+                <radialGradient id="paint0_radial_7092_54471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(17.4144 61.017) scale(65.31 65.2708)">
+                <stop offset="0.09" stop-color="#FA8F21"/>
+                <stop offset="0.78" stop-color="#D82D7E"/>
+                </radialGradient>
+                <radialGradient id="paint1_radial_7092_54471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.1086 63.257) scale(51.4733 51.4424)">
+                <stop offset="0.64" stop-color="#8C3AAA" stop-opacity="0"/>
+                <stop offset="1" stop-color="#8C3AAA"/>
+                </radialGradient>
+                </defs>
+                </svg>
+            </button>
+          </div>
+
+          <div class="pb-4">
+            <span class="font-bold text-lg">
+              Mall Locations
+            </span>
+            <p class="mt-1 text-sm text-slate-500">
+              Need to contact a branch? 
+              <a href="malls.html" target="_blank" class="font-bold cursor-pointer hover:underline">Click here</a>
+            </p>
+          </div>
+
+          <div class="pb-4">
+            <span class="font-bold text-lg">
+              Leasing
+            </span>
+            <p class="mt-1 text-sm text-slate-500">
+              Want to partner with us?
+              <a href="leasing.html" target="_blank" class="font-bold cursor-pointer hover:underline">Click here</a>
+            </p>
+          </div>
+
+          <div class="pb-4">
+            <span class="font-bold text-lg">
+              Careers
+            </span>
+            <p class="mt-1 text-sm text-slate-500">
+              Want to work with us?
+              <a href="careers.html" target="_blank" class="font-bold cursor-pointer hover:underline">Click here</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="p-8 col-span-2">
+          <form>
+             <div class="grid grid-cols-2 gap-4">
+              <mat-form-field>
+                <input type="text" class="w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name">
+              </mat-form-field>
+              <mat-form-field>
+                <input type="tel" class="w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mobile No.">
+              </mat-form-field>
+              <mat-form-field>
+                <input type="email" class="w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email">
+              </mat-form-field>
+              <mat-form-field>
+                <select class="w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option value="" selected>Subject</option>
+                  <option value="">Land Acquisition</option>
+                  <option value="">Mall Concern</option>
+                  <option value="">Marketing Inquiry</option>
+                  <option value="">Leasing Inquiry</option>
+                </select>
+              </mat-form-field>
+
+            </div>
+
+            <mat-form-field>
+              <textarea id="message" rows="4" class="mt-5 w-full p-2 h-[188px] text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts..."></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="flex items-center items-start mt-3">
+                <input type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4">
+              <mat-label class="text-sm ml-3 font-medium text-slate-700">
+                I agree to the
+                <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>
+              </mat-label>
+            </mat-form-field>
+
+            <div class="mt-3">
+              <button class="rounded-2xl bg-gradient-to-tl from-blue-600 to-cyan-400 px-10 py-2 font-semibold text-white cursor-pointer shadow-md hover:scale-102 hover:shadow-soft-xs active:opacity-85 bg-transparent w-full">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="container md:px-60">
+        <div class="p-8">
+          <img src="../assets/img/curved-images/curved14.jpg" class="h-[400px] w-full rounded-xl" alt=""></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl p-4">
+      <div class="md:flex md:justify-between">
+        <div class="mb-6 md:mb-0">
+          <a href="index.html" class="flex items-center">
+            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="RCS Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">RCS Supermarket</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+            <mat-list class="text-gray-500 dark:text-gray-400 font-medium flex flex-col">
+              <mat-list-item class="mb-4">
+                <a href="index.html" class="hover:underline">RCS Supermarket</a>
+              </mat-list-item>
+              <mat-list-item>
+                <a href="malls.html" class="hover:underline">Malls</a>
+              </mat-list-item>
+            </mat-list>
+          </div>
+
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+            <mat-list class="text-gray-500 dark:text-gray-400 font-medium flex flex-col">
+              <mat-list-item class="mb-4">
+                <a href="#" class="hover:underline">Facebook</a>
+              </mat-list-item>
+              <mat-list-item>
+                <a href="#" class="hover:underline">Viber</a>
+              </mat-list-item>
+            </mat-list>
+          </div>
+
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+            <mat-list class="text-gray-500 dark:text-gray-400 font-medium flex flex-col">
+              <mat-list-item class="mb-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+              </mat-list-item>
+              <mat-list-item>
+                <a href="#" class="hover:underline">Terms &amp; Condition</a>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 h-1 bg-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          © 2023
+          <a href="#" class="hover:underline">RCS Eastern Intertrade Corp</a>. All Rights Reserved.
+        </span>
+
+        <div class="flex mt-4 sm:justify-center sm:mt-0 gap-4">
+          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+              <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+            </svg>
+            <span class="sr-only">Facebook page</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="w-4 h-4" viewBox="0 0 256 256" xml:space="preserve">
+
+              <defs>
+              </defs>
+              <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <path d="M 78.042 8.778 c -2.237 -2.064 -11.275 -8.625 -31.406 -8.714 c 0 0 -23.74 -1.432 -35.313 9.184 C 4.881 15.692 2.615 25.12 2.376 36.809 C 2.137 48.499 1.827 70.405 22.943 76.344 h 0.02 l -0.013 9.064 c 0 0 -0.135 3.669 2.281 4.418 c 2.923 0.908 4.638 -1.881 7.428 -4.888 c 1.531 -1.65 3.646 -4.075 5.24 -5.928 c 14.442 1.215 25.549 -1.563 26.81 -1.973 c 2.916 -0.945 19.416 -3.06 22.099 -24.964 C 89.579 29.496 85.469 15.215 78.042 8.778 z M 65.906 57.835 c 0 0.009 -0.007 0.026 -0.007 0.034 c -0.93 1.612 -2.11 3.065 -3.497 4.306 c -0.016 0.008 -0.016 0.016 -0.031 0.024 c -1.205 1.007 -2.388 1.579 -3.551 1.717 c -0.171 0.03 -0.345 0.041 -0.519 0.032 c -0.513 0.005 -1.023 -0.073 -1.51 -0.232 l -0.038 -0.055 c -1.791 -0.505 -4.781 -1.769 -9.761 -4.516 c -2.882 -1.571 -5.625 -3.383 -8.201 -5.417 c -1.291 -1.019 -2.522 -2.111 -3.688 -3.271 l -0.124 -0.124 l -0.124 -0.124 l -0.124 -0.124 c -0.042 -0.04 -0.082 -0.082 -0.124 -0.124 c -1.16 -1.166 -2.252 -2.397 -3.271 -3.688 c -2.034 -2.575 -3.846 -5.318 -5.417 -8.199 c -2.747 -4.981 -4.011 -7.968 -4.516 -9.762 l -0.055 -0.038 c -0.158 -0.487 -0.236 -0.997 -0.231 -1.51 c -0.009 -0.173 0.001 -0.347 0.031 -0.519 c 0.145 -1.161 0.718 -2.345 1.719 -3.553 c 0.008 -0.015 0.016 -0.015 0.024 -0.031 c 1.24 -1.387 2.694 -2.567 4.306 -3.495 c 0.008 0 0.024 -0.008 0.034 -0.008 c 1.621 -0.844 3.158 -0.558 4.203 0.675 c 0.008 0.008 2.176 2.611 3.106 3.882 c 0.958 1.348 1.848 2.742 2.666 4.179 c 1.067 1.914 0.398 3.873 -0.65 4.681 l -2.114 1.68 c -1.067 0.862 -0.926 2.462 -0.926 2.462 s 3.131 11.849 14.828 14.835 c 0 0 1.6 0.135 2.462 -0.927 l 1.68 -2.114 c 0.81 -1.048 2.766 -1.717 4.681 -0.65 c 1.435 0.818 2.828 1.708 4.175 2.666 c 1.271 0.935 3.873 3.106 3.881 3.106 C 66.464 54.677 66.75 56.214 65.906 57.835 z M 46.309 24.289 c -0.627 -0.046 -1.098 -0.592 -1.052 -1.219 c 0.046 -0.627 0.594 -1.099 1.219 -1.052 c 4.845 0.355 8.692 2.052 11.433 5.043 c 2.747 3.002 4.091 6.777 3.995 11.22 c -0.013 0.62 -0.52 1.114 -1.138 1.114 c -0.008 0 -0.017 0 -0.025 0 c -0.629 -0.014 -1.127 -0.534 -1.114 -1.163 c 0.084 -3.891 -1.027 -7.042 -3.398 -9.633 C 53.86 26.015 50.615 24.604 46.309 24.289 z M 56.061 36.242 c 0.031 0.628 -0.453 1.162 -1.081 1.193 c -0.019 0.001 -0.038 0.001 -0.057 0.001 c -0.603 0 -1.106 -0.473 -1.136 -1.082 c -0.192 -3.869 -2.011 -5.761 -5.726 -5.955 c -0.628 -0.033 -1.11 -0.568 -1.078 -1.196 c 0.033 -0.628 0.566 -1.112 1.196 -1.078 C 53.084 28.383 55.81 31.189 56.061 36.242 z M 66.754 41.735 c -0.003 0 -0.006 0 -0.009 0 c -0.625 0 -1.134 -0.504 -1.138 -1.13 c -0.052 -6.869 -2.114 -12.336 -6.127 -16.248 c -4.021 -3.92 -9.102 -5.929 -15.103 -5.97 c -0.629 -0.004 -1.135 -0.518 -1.131 -1.146 c 0.004 -0.626 0.513 -1.131 1.138 -1.131 c 0.003 0 0.005 0 0.008 0 c 6.609 0.046 12.22 2.272 16.676 6.617 c 4.465 4.352 6.757 10.362 6.814 17.861 C 67.888 41.216 67.382 41.73 66.754 41.735 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114, 113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              </g>
+              </svg>
+            <span class="sr-only">Viber icon</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="w-4 h-4" viewBox="0 0 256 256" xml:space="preserve">
+
+              <defs>
+              </defs>
+              <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <path d="M 45 31.77 c -7.444 0 -13.5 6.056 -13.5 13.5 s 6.056 13.5 13.5 13.5 s 13.5 -6.056 13.5 -13.5 S 52.444 31.77 45 31.77 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114,113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                <path d="M 63.718 0 H 26.282 C 11.767 0 0 11.767 0 26.282 v 37.437 C 0 78.233 11.767 90 26.282 90 h 37.437 C 78.233 90 90 78.233 90 63.718 V 26.282 C 90 11.767 78.233 0 63.718 0 z M 45 68.679 c -12.908 0 -23.409 -10.501 -23.409 -23.408 c 0 -12.908 10.501 -23.409 23.409 -23.409 c 12.907 0 23.408 10.501 23.408 23.409 C 68.408 58.178 57.907 68.679 45 68.679 z M 68.922 21.922 c -2.761 0 -5 -2.239 -5 -5 s 2.239 -5 5 -5 s 5 2.239 5 5 S 71.683 21.922 68.922 21.922 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114, 113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              </g>
+              </svg>
+              <span class="sr-only">Instagram icon</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="w-4 h-4" viewBox="0 0 256 256" xml:space="preserve">
+
+            <defs>
+            </defs>
+            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+              <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 L 84.494 22.535 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(114, 113, 113); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            </g>
+            </svg>
+            <span class="sr-only">Tiktok icon</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navLinks = document.querySelector('.nav-links')
+    function onToggleMenu(){
+        navLinks.classList.toggle('top-[9%]')
+    }
+  </script>
+</body>
+</html>
